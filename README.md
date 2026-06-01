@@ -6,6 +6,28 @@ Internal Defuddle Browser is an early-preview desktop Obsidian plugin for people
 
 It adds an internal browser to Obsidian, lets you clean article pages with Defuddle, preview the result as Markdown, fetch YouTube transcripts when available, and save approved notes directly into your vault.
 
+## Screenshots
+
+### Browse inside Obsidian
+
+![Internal browser view inside Obsidian](docs/assets/browser-view.png)
+
+### Preview Defuddle-cleaned Markdown
+
+![Defuddle Markdown preview](docs/assets/defuddle-preview.png)
+
+### Choose where clips should be saved
+
+![Obsidian-style destination folder picker](docs/assets/folder-picker.png)
+
+### Open YouTube in the internal browser
+
+![YouTube page inside the internal browser](docs/assets/youtube-browser-view.png)
+
+### Preview YouTube transcripts as Markdown
+
+![YouTube transcript Markdown preview](docs/assets/youtube-transcript.png)
+
 ## Status
 
 Early preview. Desktop only. Not yet submitted to the official Obsidian community plugin directory.
