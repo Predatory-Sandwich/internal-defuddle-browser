@@ -1,6 +1,47 @@
 # Internal Defuddle Browser
 
-Internal Defuddle Browser is a desktop-only Obsidian plugin that adds a custom in-Obsidian browser for clipping web articles and YouTube transcripts into clean Markdown notes.
+Browse, Defuddle-clean, transcribe, and save web knowledge directly inside Obsidian.
+
+Internal Defuddle Browser is an early-preview desktop Obsidian plugin for people who use Obsidian as a second brain, research hub, writing workspace, or AI-agent-ready knowledge vault.
+
+It adds an internal browser to Obsidian, lets you clean article pages with Defuddle, preview the result as Markdown, fetch YouTube transcripts when available, and save approved notes directly into your vault.
+
+## Status
+
+Early preview. Desktop only. Not yet submitted to the official Obsidian community plugin directory.
+
+Please expect rough edges. Feedback, bug reports, install issues, and workflow ideas are welcome.
+
+## Install early preview
+
+Download the latest release:
+
+https://github.com/Predatory-Sandwich/internal-defuddle-browser/releases/latest
+
+1. Download `internal-defuddle-browser-0.0.1.zip` from the latest release.
+2. Unzip it.
+3. Move the unzipped `internal-defuddle-browser` folder into your vault's plugins folder:
+
+   ```text
+   .obsidian/plugins/internal-defuddle-browser/
+   ```
+
+4. Restart Obsidian or reload plugins.
+5. Go to `Settings -> Community plugins`.
+6. Enable `Internal Defuddle Browser`.
+
+The installed plugin folder should contain:
+
+```text
+internal-defuddle-browser/
+  main.js
+  manifest.json
+  styles.css
+```
+
+## Why this exists
+
+A lot of web clipping workflows either leave the browser, save noisy pages, or require several copy/paste steps. This plugin is an experiment in making Obsidian itself a focused research browser: open the page, clean it, review it, and save it where it belongs.
 
 ## What it does
 

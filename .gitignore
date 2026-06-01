@@ -10,6 +10,7 @@ main.js
 data.json
 .obsidian/
 dist/
+release/
 coverage/
 
 # OS / editor clutter
