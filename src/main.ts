@@ -8,6 +8,7 @@ const DEFAULT_BROWSER_TITLE = "Internal Defuddle Browser";
 
 type InternalDefuddleClipperSettings = {
   defaultHomePage: string;
+  autoLoadHomePage: boolean;
   defaultClippingFolder: string;
   toolbarButtonBackgroundColor: string;
   toolbarButtonTextColor: string;
@@ -15,7 +16,8 @@ type InternalDefuddleClipperSettings = {
 };
 
 const DEFAULT_SETTINGS: InternalDefuddleClipperSettings = {
-  defaultHomePage: "https://example.com",
+  defaultHomePage: "",
+  autoLoadHomePage: false,
   defaultClippingFolder: "Clippings",
   toolbarButtonBackgroundColor: "#2f2f2f",
   toolbarButtonTextColor: "#ffffff",
@@ -238,13 +240,25 @@ class InternalDefuddleClipperSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName("Default home page")
-      .setDesc("The page the Internal Defuddle Browser opens to by default.")
+      .setDesc("Optional page to open when automatic home-page loading is enabled. Leave blank to open an idle browser view.")
       .addText((text) => {
         text
           .setPlaceholder("https://example.com")
           .setValue(this.plugin.settings.defaultHomePage)
           .onChange(async (value) => {
             this.plugin.settings.defaultHomePage = value.trim();
+            await this.plugin.saveSettings();
+          });
+      });
+
+    new Setting(containerEl)
+      .setName("Automatically load home page")
+      .setDesc("When off, opening Obsidian restores the browser view without immediately loading a website. This reduces startup CPU/GPU usage.")
+      .addToggle((toggle) => {
+        toggle
+          .setValue(this.plugin.settings.autoLoadHomePage)
+          .onChange(async (value) => {
+            this.plugin.settings.autoLoadHomePage = value;
             await this.plugin.saveSettings();
           });
       });
@@ -640,8 +654,10 @@ class DefuddleBrowserView extends ItemView {
     });
 
     const homePage = this.plugin.settings.defaultHomePage.trim();
-    if (homePage) {
+    if (this.plugin.settings.autoLoadHomePage && homePage) {
       this.loadUrl(homePage);
+    } else {
+      this.setStatus("Ready. Enter a URL and click Go, or enable automatic home-page loading in settings.");
     }
 
     this.updateNavigationState();
