@@ -59,7 +59,11 @@ internal-defuddle-browser/
   main.js
   manifest.json
   styles.css
+  LICENSE
+  THIRD_PARTY_NOTICES.md
 ```
+
+`LICENSE` covers this plugin's code. `THIRD_PARTY_NOTICES.md` lists third-party dependencies and projects that influenced the plugin.
 
 ## Why this exists
 

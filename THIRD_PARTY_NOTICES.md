@@ -14,6 +14,7 @@ Obsidian Web Clipper was used as research/reference for clipping architecture, D
 
 - Package: defuddle
 - Repository: https://github.com/kepano/defuddle
+- Copyright: Copyright (c) 2025 Steph Ango (@kepano)
 - License: MIT
 
 Defuddle is used as the article/content extraction engine.
