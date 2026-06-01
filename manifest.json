@@ -1,0 +1,10 @@
+{
+  "id": "internal-defuddle-browser",
+  "name": "Internal Defuddle Browser",
+  "version": "0.0.1",
+  "minAppVersion": "1.8.0",
+  "description": "Browse web content inside Obsidian and preview Defuddle Markdown using a custom internal browser.",
+  "author": "Adam",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}
